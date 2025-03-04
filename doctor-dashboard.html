@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - MedConnect</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/doctor-dashboard.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../assets/images/logo.png" alt="MedConnect Logo" class="logo">
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Overview</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Patients</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-file-medical"></i>
+                <span>Reports</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-comments"></i>
+                <span>Messages</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="nav-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search patients, reports...">
+            </div>
+            
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-profile">
+                    <img src="../assets/images/doctor-avatar.png" alt="Doctor Avatar">
+                    <span>Dr. Smith</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Stats Cards -->
+            <section class="stats-section">
+                <div class="card stats-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <div class="stats-info">
+                        <h3>Today's Appointments</h3>
+                        <p class="stats-number">8</p>
+                    </div>
+                </div>
+                
+                <div class="card stats-card">
+                    <i class="fas fa-file-medical-alt"></i>
+                    <div class="stats-info">
+                        <h3>Pending Reports</h3>
+                        <p class="stats-number">5</p>
+                    </div>
+                </div>
+                
+                <div class="card stats-card">
+                    <i class="fas fa-envelope"></i>
+                    <div class="stats-info">
+                        <h3>New Messages</h3>
+                        <p class="stats-number">12</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appointments Section -->
+            <section class="appointments-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Upcoming Appointments</h2>
+                        <button class="btn btn-outline">View All</button>
+                    </div>
+                    <div class="appointments-list">
+                        <div class="appointment-item">
+                            <div class="appointment-time">09:00 AM</div>
+                            <div class="appointment-info">
+                                <h4>John Doe</h4>
+                                <p>General Checkup</p>
+                            </div>
+                            <div class="appointment-status">
+                                <span class="status-badge confirmed">Confirmed</span>
+                            </div>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="appointment-time">10:30 AM</div>
+                            <div class="appointment-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Follow-up</p>
+                            </div>
+                            <div class="appointment-status">
+                                <span class="status-badge pending">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reports Section -->
+            <section class="reports-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Pending Reports</h2>
+                        <button class="btn btn-outline">View All</button>
+                    </div>
+                    <div class="reports-list">
+                        <div class="report-item">
+                            <div class="report-info">
+                                <h4>Blood Test Results</h4>
+                                <p>Patient: Michael Brown</p>
+                            </div>
+                            <div class="report-actions">
+                                <button class="btn btn-primary">Review</button>
+                            </div>
+                        </div>
+                        <div class="report-item">
+                            <div class="report-info">
+                                <h4>X-Ray Analysis</h4>
+                                <p>Patient: Emma Wilson</p>
+                            </div>
+                            <div class="report-actions">
+                                <button class="btn btn-primary">Review</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html> 

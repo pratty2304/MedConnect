@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Appointment - MedConnect</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/appointment-scheduling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="scheduling-container">
+        <!-- Sidebar -->
+        <aside class="scheduling-sidebar">
+            <div class="sidebar-header">
+                <h2>Schedule Appointment</h2>
+                <p>Select your preferred doctor and time slot</p>
+            </div>
+
+            <!-- Doctor Selection -->
+            <div class="doctor-selection">
+                <h3>Select Doctor</h3>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search doctors by name or specialty" id="doctorSearch">
+                </div>
+                <div class="doctors-list" id="doctorsList">
+                    <!-- Doctors will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Appointment Type -->
+            <div class="appointment-type">
+                <h3>Appointment Type</h3>
+                <div class="type-options">
+                    <label class="type-option">
+                        <input type="radio" name="appointmentType" value="consultation" checked>
+                        <span class="option-content">
+                            <i class="fas fa-user-md"></i>
+                            <div>
+                                <h4>Consultation</h4>
+                                <p>General medical consultation</p>
+                            </div>
+                        </span>
+                    </label>
+                    <label class="type-option">
+                        <input type="radio" name="appointmentType" value="followup">
+                        <span class="option-content">
+                            <i class="fas fa-clipboard-check"></i>
+                            <div>
+                                <h4>Follow-up</h4>
+                                <p>Follow-up appointment</p>
+                            </div>
+                        </span>
+                    </label>
+                    <label class="type-option">
+                        <input type="radio" name="appointmentType" value="virtual">
+                        <span class="option-content">
+                            <i class="fas fa-video"></i>
+                            <div>
+                                <h4>Virtual Visit</h4>
+                                <p>Online video consultation</p>
+                            </div>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="scheduling-content">
+            <!-- Calendar Section -->
+            <section class="calendar-section">
+                <div class="calendar-header">
+                    <div class="calendar-nav">
+                        <button id="prevMonth" class="btn btn-icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <h2 id="currentMonth">September 2023</h2>
+                        <button id="nextMonth" class="btn btn-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="view-toggle">
+                        <button class="btn btn-outline active" data-view="month">Month</button>
+                        <button class="btn btn-outline" data-view="week">Week</button>
+                        <button class="btn btn-outline" data-view="day">Day</button>
+                    </div>
+                </div>
+
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendar will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Time Slots Section -->
+            <section class="time-slots-section" id="timeSlotsSection">
+                <h3>Available Time Slots</h3>
+                <div class="time-slots-grid" id="timeSlotsGrid">
+                    <!-- Time slots will be populated by JavaScript -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Booking Summary -->
+        <aside class="booking-summary" id="bookingSummary">
+            <div class="summary-header">
+                <h3>Appointment Summary</h3>
+            </div>
+            <div class="summary-content">
+                <div class="summary-item">
+                    <span class="label">Doctor</span>
+                    <span class="value" id="summaryDoctor">Not selected</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Date</span>
+                    <span class="value" id="summaryDate">Not selected</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Time</span>
+                    <span class="value" id="summaryTime">Not selected</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Type</span>
+                    <span class="value" id="summaryType">Consultation</span>
+                </div>
+            </div>
+            <div class="summary-notes">
+                <label for="appointmentNotes">Additional Notes</label>
+                <textarea id="appointmentNotes" rows="3" 
+                    placeholder="Add any specific concerns or notes for the doctor..."></textarea>
+            </div>
+            <div class="summary-actions">
+                <button class="btn btn-secondary" id="cancelBooking">Cancel</button>
+                <button class="btn btn-primary" id="confirmBooking" disabled>
+                    Confirm Booking
+                </button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Appointment Confirmed</h3>
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="modal-body">
+                <p>Your appointment has been successfully scheduled.</p>
+                <div class="confirmation-details">
+                    <!-- Details will be populated by JavaScript -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="viewAppointments">
+                    View My Appointments
+                </button>
+                <button class="btn btn-outline" id="scheduleAnother">
+                    Schedule Another
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../js/appointment-scheduling.js"></script>
+</body>
+</html> 

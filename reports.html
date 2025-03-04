@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Reports - MedConnect</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/reports.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="reports-page">
+    <div class="reports-container">
+        <!-- Reports Sidebar -->
+        <aside class="reports-sidebar">
+            <div class="sidebar-header">
+                <h2>Medical Reports</h2>
+                <button class="btn btn-primary" id="uploadReportBtn">
+                    <i class="fas fa-plus"></i> Upload Report
+                </button>
+            </div>
+
+            <div class="reports-filter">
+                <input type="text" placeholder="Search reports..." id="searchReports">
+                <select id="filterReports">
+                    <option value="all">All Reports</option>
+                    <option value="lab">Lab Results</option>
+                    <option value="imaging">Imaging</option>
+                    <option value="prescription">Prescriptions</option>
+                </select>
+            </div>
+
+            <div class="reports-list" id="reportsList">
+                <!-- Reports will be populated by JavaScript -->
+            </div>
+        </aside>
+
+        <!-- Report Viewer -->
+        <main class="report-viewer">
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState">
+                <i class="fas fa-file-medical"></i>
+                <h3>Select a report to view details</h3>
+            </div>
+
+            <!-- Active Report View -->
+            <div class="active-report hidden" id="activeReport">
+                <div class="report-header">
+                    <div class="report-info">
+                        <h2 id="reportTitle"></h2>
+                        <div class="report-metadata">
+                            <span id="reportDate"></span>
+                            <span id="reportType"></span>
+                        </div>
+                    </div>
+                    <div class="report-actions">
+                        <button class="btn btn-outline" id="downloadReport">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                        <button class="btn btn-outline" id="shareReport">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+                </div>
+
+                <div class="report-content" id="reportContent">
+                    <!-- Report content will be populated by JavaScript -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Upload Modal -->
+    <div class="modal hidden" id="uploadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Upload Medical Report</h3>
+                <button class="close-modal" id="closeUploadModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form id="uploadForm">
+                <div class="form-group">
+                    <label for="reportTitle">Report Title</label>
+                    <input type="text" id="reportTitle" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="reportType">Report Type</label>
+                    <select id="reportType" required>
+                        <option value="lab">Lab Results</option>
+                        <option value="imaging">Imaging</option>
+                        <option value="prescription">Prescription</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" hidden>
+                    <div class="upload-prompt">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag and drop files here or click to browse</p>
+                        <span class="file-types">Supported formats: PDF, JPG, PNG, DOC</span>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelUpload">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Upload Report</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Share Modal -->
+    <div class="modal hidden" id="shareModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Share Report</h3>
+                <button class="close-modal" id="closeShareModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form id="shareForm">
+                <div class="form-group">
+                    <label for="recipientType">Share with</label>
+                    <select id="recipientType">
+                        <option value="doctor">Doctor</option>
+                        <option value="patient">Another Patient</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="recipient">Recipient</label>
+                    <input type="text" id="recipient" placeholder="Search by name or email">
+                    <div class="recipients-list" id="recipientsList"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="shareMessage">Message (Optional)</label>
+                    <textarea id="shareMessage" rows="3"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelShare">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Share Report</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="../js/reports.js"></script>
+</body>
+</html> 

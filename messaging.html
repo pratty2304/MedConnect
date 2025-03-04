@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - MedConnect</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/messaging.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="messaging-page">
+    <div class="messaging-container">
+        <!-- Conversations List -->
+        <aside class="conversations-sidebar">
+            <div class="conversations-header">
+                <h2>Messages</h2>
+                <div class="search-messages">
+                    <input type="text" placeholder="Search conversations...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="conversations-list">
+                <!-- Conversations will be populated by JavaScript -->
+            </div>
+        </aside>
+
+        <!-- Chat Window -->
+        <main class="chat-window">
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState">
+                <i class="fas fa-comments"></i>
+                <h3>Select a conversation to start messaging</h3>
+            </div>
+
+            <!-- Active Chat -->
+            <div class="active-chat hidden" id="activeChat">
+                <!-- Chat Header -->
+                <div class="chat-header">
+                    <div class="chat-user-info">
+                        <img src="" alt="User Avatar" class="user-avatar">
+                        <div class="user-details">
+                            <h3 class="user-name"></h3>
+                            <span class="user-status"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be populated by JavaScript -->
+                </div>
+
+                <!-- Message Input -->
+                <div class="message-input-container">
+                    <form id="messageForm" class="message-form">
+                        <textarea 
+                            id="messageInput" 
+                            placeholder="Type your message..." 
+                            rows="1"
+                        ></textarea>
+                        <div class="message-actions">
+                            <button type="button" class="attach-btn">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <button type="submit" class="send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- File Upload Modal -->
+    <div class="modal hidden" id="fileUploadModal">
+        <div class="modal-content">
+            <h3>Attach File</h3>
+            <form id="fileUploadForm">
+                <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+                <button type="submit" class="btn btn-primary">Upload</button>
+                <button type="button" class="btn btn-secondary" id="cancelUpload">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="../js/messaging.js"></script>
+</body>
+</html> 

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - MedConnect</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/patient-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../assets/images/logo.png" alt="MedConnect Logo" class="logo">
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Overview</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Appointments</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-file-medical"></i>
+                <span>Medical Records</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-pills"></i>
+                <span>Prescriptions</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-comments"></i>
+                <span>Messages</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-user-md"></i>
+                <span>My Doctors</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="nav-item" id="profileSettings">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+            <a href="#" class="nav-item" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search for doctors, appointments...">
+            </div>
+
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-menu">
+                    <img src="../assets/images/avatar-placeholder.png" alt="User Avatar" class="avatar">
+                    <span class="user-name">John Doe</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+                <button class="action-card">
+                    <i class="fas fa-calendar-plus"></i>
+                    <span>Book Appointment</span>
+                </button>
+                <button class="action-card">
+                    <i class="fas fa-file-upload"></i>
+                    <span>Upload Records</span>
+                </button>
+                <button class="action-card">
+                    <i class="fas fa-video"></i>
+                    <span>Virtual Consultation</span>
+                </button>
+                <button class="action-card">
+                    <i class="fas fa-first-aid"></i>
+                    <span>Emergency Contact</span>
+                </button>
+            </section>
+
+            <!-- Stats Overview -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-icon upcoming">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Upcoming Appointments</h3>
+                        <p class="stat-number">2</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon prescriptions">
+                        <i class="fas fa-prescription-bottle-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Active Prescriptions</h3>
+                        <p class="stat-number">3</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon messages">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>New Messages</h3>
+                        <p class="stat-number">5</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Upcoming Appointments -->
+            <section class="appointments-section">
+                <div class="section-header">
+                    <h2>Upcoming Appointments</h2>
+                    <button class="btn btn-outline">View All</button>
+                </div>
+                <div class="appointments-list">
+                    <!-- Appointments will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="activity-section">
+                <div class="section-header">
+                    <h2>Recent Activity</h2>
+                </div>
+                <div class="activity-list">
+                    <!-- Activity items will be populated by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<script type="module" src="../js/patient-dashboard.js"></script>
+</body>
+</html> 
